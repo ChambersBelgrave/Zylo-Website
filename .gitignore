@@ -1,0 +1,17 @@
+# Node / tooling
+node_modules/
+dist/
+build/
+.cache/
+.tmp/
+*.log
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Env/keys
+.env
+*.env.*

@@ -1,0 +1,42 @@
+<!-- partials/header.html -->
+<header class="site-nav fixed top-0 inset-x-0 z-50 border-b border-muted">
+  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <!-- Logo -->
+    <a href="#"
+       class="logo flex items-center space-x-2"
+       aria-label="Lakay Events Home">
+      <img src="assets/img/logo.png"
+           alt="Lakay Events logo"
+           class="h-12 md:h-14 lg:h-16 w-auto object-contain" />
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex space-x-8">
+      <a href="#events" class="hover:text-[var(--primary)] transition">Events</a>
+      <a href="#gallery" class="hover:text-[var(--primary)] transition">Gallery</a>
+      <a href="#about" class="hover:text-[var(--primary)] transition">About</a>
+      <a href="#faq" class="hover:text-[var(--primary)] transition">FAQ</a>
+      <a href="#contact" class="hover:text-[var(--primary)] transition">Contact</a>
+    </nav>
+
+    <!-- Ticket CTA -->
+    <a href="#events"
+       class="px-6 py-2 rounded-full gradient-bg text-white font-bold hover:shadow-lg transition">
+      Tickets
+    </a>
+
+    <!-- Mobile Menu Button -->
+    <button class="md:hidden" id="mobile-menu-button" aria-label="Open navigation menu" aria-expanded="false">
+      <i data-feather="menu"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="md:hidden hidden w-full py-2 px-4 shadow-md border-t border-muted" id="mobile-menu">
+    <a href="#events" class="block py-2 hover:text-[var(--primary)]">Events</a>
+    <a href="#gallery" class="block py-2 hover:text-[var(--primary)]">Gallery</a>
+    <a href="#about" class="block py-2 hover:text-[var(--primary)]">About</a>
+    <a href="#faq" class="block py-2 hover:text-[var(--primary)]">FAQ</a>
+    <a href="#contact" class="block py-2 hover:text-[var(--primary)]">Contact</a>
+  </div>
+</header>

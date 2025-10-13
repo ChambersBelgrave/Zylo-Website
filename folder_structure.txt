@@ -1,0 +1,33 @@
+E:\Websites\Lakay Events\
+├─assets
+│  ├─css
+│  │  └─theme.css
+│  ├─img
+│  │  └─logo.png
+│  └─js
+│     ├─app.js
+│     └─modules
+│        ├─cookies.js
+│        ├─faq.js
+│        ├─icons.js
+│        ├─lightbox.js
+│        ├─modals.js
+│        ├─nav.js
+│        ├─newsletter.js
+│        ├─smoothscroll.js
+│        └─tickets.js
+├─bdaf8910-517b-4396-be1a-103d8df56a6a.JPG
+├─index.html
+├─partials
+│  ├─about.html
+│  ├─contact.html
+│  ├─events.html
+│  ├─faq.html
+│  ├─footer.html
+│  ├─gallery.html
+│  ├─header.html
+│  ├─hero.html
+│  ├─map.html
+│  └─modals.html
+├─readme.md
+└─remove_black_bg.py

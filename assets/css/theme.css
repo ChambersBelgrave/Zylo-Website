@@ -1,0 +1,161 @@
+/* assets/css/theme.css */
+
+/* Color variables */
+:root {
+  --primary: #ff4d4d;
+  --secondary: #ff9500;
+  --bg-0: #0b0d15;   /* page background */
+  --bg-1: #0f111a;   /* surface 1 */
+  --bg-2: #121728;   /* surface 2 */
+  --bg-3: #1a2238;   /* subtle contrast */
+  --text-0: #e6e7ee; /* primary text */
+  --text-1: #c8cbd8; /* secondary text */
+  --border: #2a334a; /* borders */
+}
+
+/* Global */
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-0);
+  color: var(--text-0);
+}
+
+/* Reusable helpers */
+.gradient-bg {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+.surface-1 { background-color: var(--bg-1); }
+.surface-2 { background-color: var(--bg-2); }
+.surface-3 { background-color: var(--bg-3); }
+
+.text-muted { color: var(--text-1); }
+.border-muted { border-color: var(--border); }
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: .5rem;
+  box-shadow: 0 10px 40px rgba(0,0,0,.6);
+}
+
+/* Cookie banner */
+.cookie-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-2);
+  color: var(--text-0);
+  padding: 1rem;
+  z-index: 100;
+  transform: translateY(100%);
+  transition: transform .3s ease;
+  border-top: 1px solid var(--border);
+}
+.cookie-banner.show { transform: translateY(0); }
+
+/* Generic modal */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+.modal-content {
+  background: var(--bg-1);
+  color: var(--text-0);
+  padding: 2rem;
+  border-radius: .75rem;
+  max-width: 800px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+}
+
+/* Toggle switches (in cookie modal) */
+.toggle-label { background: #334155; }
+.toggle-dot { transition: transform .2s ease; }
+
+/* Utility overrides for images */
+img { background-color: transparent; }
+
+/* Gradient text helper */
+.gradient-text {
+  background-image: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Optional: keep logo image neat inside header (increased cap) */
+header .logo img {
+  max-height: 4rem; /* increased to support h-12 md:h-14 lg:h-16 */
+  width: auto;
+  display: block;
+}
+
+/* ===== Fixed, frosted nav ================================================= */
+:root { --nav-height: 64px; } /* Will be kept in sync by JS */
+
+/* The fixed header background & frosted glass effect */
+.site-nav {
+  /* A semi-transparent dark glass that matches your --bg-1 tone */
+  background: rgba(15, 17, 26, 0.65);
+  /* Frosted effect (progressive enhancement) */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* More opaque fallback on browsers without backdrop-filter support */
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .site-nav {
+    background: rgba(15, 17, 26, 0.92);
+  }
+}
+
+/* Add a subtle shadow only once the page scrolls */
+.site-nav.is-scrolled {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* Ensure content clears the fixed header */
+body.with-fixed-nav {
+  padding-top: var(--nav-height);
+}
+
+/* Make the mobile menu drop under the fixed header and span full width
+   and use the same frosted glass style as the header */
+#mobile-menu {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: var(--nav-height);
+  z-index: 40; /* beneath the header's z-50 */
+  background: rgba(15, 17, 26, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Fallback for mobile menu without backdrop-filter support */
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  #mobile-menu {
+    background: rgba(15, 17, 26, 0.92);
+  }
+}

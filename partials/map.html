@@ -1,0 +1,68 @@
+<section id="map" class="border-t border-muted" style="background-color: var(--bg-1);">
+  <div class="h-96 w-full flex items-center justify-center">
+    <div class="text-center">
+      <i data-feather="map" class="w-16 h-16 text-muted mx-auto mb-4"></i>
+      <h3 class="text-xl font-bold mb-2">Our Venue Location</h3>
+
+      <!-- Keep your displayed address here -->
+      <p class="text-[var(--text-1)] mb-4" id="venue-address" data-address="123 Carnival Road, London, E1 6AN">
+        123 Carnival Road, London, E1 6AN
+      </p>
+
+      <!-- Default to Google Maps (universal http(s) fallback) -->
+      <a
+        id="open-in-maps"
+        href="https://www.google.com/maps/search/?api=1&query=123%20Carnival%20Road%2C%20London%2C%20E1%206AN"
+        target="_blank"
+        rel="noopener"
+        class="inline-block px-6 py-2 rounded-lg hover:opacity-90 transition text-white"
+        style="background: var(--primary);"
+        aria-label="Open venue in your maps app"
+      >
+        Open in Maps
+      </a>
+    </div>
+  </div>
+
+  <!-- Tiny enhancer: pick the best maps scheme per device -->
+  <script>
+    (function () {
+      const addressEl = document.getElementById('venue-address');
+      const btn = document.getElementById('open-in-maps');
+      if (!addressEl || !btn) return;
+
+      const address = (addressEl.dataset.address || addressEl.textContent || '').trim();
+      if (!address) return;
+
+      const encoded = encodeURIComponent(address);
+      const ua = navigator.userAgent || navigator.vendor || '';
+
+      // Default web URL (works on desktop & all browsers)
+      let href = `https://www.google.com/maps/search/?api=1&query=${encoded}`;
+      let useTargetBlank = true;
+
+      // iOS & macOS Safari: prefer Apple Maps
+      // (macOS Safari supports maps://; using https for broader compatibility)
+      const isApple = /iPad|iPhone|iPod/.test(ua) || (/Macintosh/.test(ua) && 'ontouchend' in document);
+      if (isApple) {
+        href = `https://maps.apple.com/?q=${encoded}`;
+      }
+
+      // Android: prefer native geo: intent if available
+      if (/Android/i.test(ua)) {
+        href = `geo:0,0?q=${encoded}`;
+        useTargetBlank = false; // geo: doesn't open in a new tab
+      }
+
+      // Apply
+      btn.setAttribute('href', href);
+      if (useTargetBlank) {
+        btn.setAttribute('target', '_blank');
+        btn.setAttribute('rel', 'noopener');
+      } else {
+        btn.removeAttribute('target');
+        btn.removeAttribute('rel');
+      }
+    })();
+  </script>
+</section>

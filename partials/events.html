@@ -1,0 +1,52 @@
+<!-- partials/events.html -->
+<section id="events" class="py-20" style="background-color: var(--bg-0);">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" data-aos="fade-up">Upcoming Events</h2>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Event 1 -->
+      <div class="rounded-xl overflow-hidden shadow-lg border border-muted" data-aos="fade-up" style="background-color: var(--bg-1);">
+        <div class="h-48 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] flex items-center justify-center">
+          <span class="text-white text-xl font-bold">Event</span>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">Soca Night</h3>
+          <div class="flex items-center text-muted mb-3">
+            <i data-feather="calendar" class="mr-2"></i>
+            <span>June 15, 2023 | 9PM - 2AM</span>
+          </div>
+          <div class="flex items-center text-muted mb-4">
+            <i data-feather="map-pin" class="mr-2"></i>
+            <span>Lakay Club, London</span>
+          </div>
+          <p class="mb-4 text-[var(--text-1)]">
+            Experience the best of Caribbean music with our special Soca Night featuring DJ Killa and live performances.
+          </p>
+
+          <div class="mb-4">
+            <div class="flex justify-between text-sm mb-1 text-[var(--text-1)]"><span>General Admission</span><span>£25</span></div>
+            <div class="flex justify-between text-sm mb-1 text-[var(--text-1)]"><span>VIP (Tables)</span><span>£75</span></div>
+            <div class="flex justify-between text-sm mb-1 text-[var(--text-1)]"><span>Early Bird</span><span>£18</span></div>
+          </div>
+
+          <div class="flex justify-between items-center">
+            <div class="text-sm text-muted">
+              <i data-feather="users" class="inline mr-1"></i><span>400 capacity</span>
+            </div>
+            <button
+              class="px-4 py-2 gradient-bg text-white rounded-full text-sm font-bold hover:shadow-md transition book-now"
+              data-event="Soca Night"
+              data-tickets='[
+                {"label":"General Admission","price":25},
+                {"label":"VIP (Tables)","price":75},
+                {"label":"Early Bird","price":18}
+              ]'
+            >
+              Book Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lakay Events | Caribbean Club Culture — Dark</title>
+
+  <!-- Tailwind CDN -->
+  <script>window.tailwind = { config: { darkMode: "class" } };</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Feather Icons (for icons.js) -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <!-- Site theme -->
+  <link rel="stylesheet" href="assets/css/theme.css" />
+</head>
+<body class="relative">
+
+  <!-- Injected Partials -->
+  <div data-include="partials/header.html"></div>
+  <main>
+    <div data-include="partials/hero.html"></div>
+    <div data-include="partials/events.html"></div>
+    <div data-include="partials/gallery.html"></div>
+    <div data-include="partials/about.html"></div>
+    <div data-include="partials/faq.html"></div>
+    <div data-include="partials/contact.html"></div>
+    <div data-include="partials/map.html"></div>
+  </main>
+  <div data-include="partials/footer.html"></div>
+  <div data-include="partials/modals.html"></div>
+
+  <!-- Single ES-module entry point; handles all JS logic -->
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>
